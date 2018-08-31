@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="userInfo">
+	<insert id="insertOne" parameterType="com.kakao.mall.model.entity.UserVo">
+	insert into user_info values(#{id},#{password},#{name},#{birth},#{email},#{phone},#{address})
+	</insert>
+	<select id="login" resultType="string" parameterType="com.kakao.mall.model.entity.UserVo">
+	select id from user_info where id=#{id} and password=#{password}
+	</select>
+</mapper>
