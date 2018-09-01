@@ -5,39 +5,48 @@
 
 <html>
 <head>
-<link rel="stylesheet" href="./css/jquery.bxslider.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="./js/jquery.bxslider.js"></script>
+<jsp:include page="./layout/header.jsp"></jsp:include>
+
+
   <title>카카오프렌즈 온라인 스토어</title>
 	
   <script>
   
     $(document).ready(function(){
+    	  
 		 var result='${result}';
 		 if(result!=''){
 			 alert(result);
 		 }
     	
-    	  $('.bxslider').bxSlider({
-    		  mode: 'fade',
-    		  autoControls: true,
-    		  pager: true,
-    		  slideWidth: 1200,
-    		  slideHeight:1000,
-    		});
     });
   </script>	
 	
 </head>
  <body>
-<jsp:include page="./layout/header.jsp"></jsp:include>
 
-
-<div class="bxslider" >
-  <div><img src="./imgs/main_slider1.jpg" ></div>
-  <div><img src="./imgs/main_slider2.jpg" ></div>
-  <div><img src="./imgs/main_slider3.jpg" ></div>
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="./imgs/main_slider1.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="./imgs/main_slider2.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="./imgs/main_slider3.jpg" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
+
 
 <jsp:include page="./layout/footer.jsp"></jsp:include>
 

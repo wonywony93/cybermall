@@ -26,6 +26,8 @@
     <!-- Custom styles for this template -->
     <link href="./css/freelancer.css" rel="stylesheet">
 
+
+
   </head>
 
   <body id="page-top">
@@ -54,7 +56,10 @@
             <c:if test="${id!=null }">
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="cart">CART</a>
-            </li>       
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="logout">LOGOUT</a>
+            </li>                   
             </c:if>
           </ul>
         </div>
@@ -63,6 +68,9 @@
     <!-- Bootstrap core JavaScript -->
     <script src="./vendor/jquery/jquery.min.js"></script>
     <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+ 
+
 
     <!-- Plugin JavaScript -->
     <script src="./vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -74,8 +82,9 @@
 
     <!-- Custom scripts for this template -->
     <script src="./js/freelancer.js"></script>
-
-   
+	
+	
+ 
 
 </body>
 </html>

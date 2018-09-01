@@ -21,6 +21,15 @@
 
 }
 </style>
+<script>
+$(document).ready(function(){
+
+var result='${result}';
+if(result!=''){
+	 alert(result);
+}
+}
+</script>
 </head>
 <body>
 <jsp:include page="./layout/header.jsp"/>

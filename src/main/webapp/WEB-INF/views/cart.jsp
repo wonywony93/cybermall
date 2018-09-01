@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,44 +27,34 @@
 <body>
 <jsp:include page="./layout/header.jsp"/>
 <header style="margin-top: 70px;">
-	<img src="./imgs/login.png" style="width:100%;">
+	<img src="./imgs/buy.png" style="width:100%;">
 </header>
 
-<div id="login">
-	<div id="loginForm">
-	<form  style="width: 70%; margin: 0px auto; padding-top:50px;"method="post" action="login">
-	<div class="form-group">
-		<label for="id" class="cols-sm-2 control-label">아이디</label>
-		<div class="cols-sm-10">
-			<div class="input-group">
-				<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-				<input type="text" class="form-control id" name="id"  placeholder="아이디를 입력해주세요" style="width:411px; height:34px;"/>
-			</div>
-		</div>
-	</div>
+	<table class="table table-hover" id="table" style="margin-top:20px;">
+		<thead>
+			<tr>
+				<th class="text-center" style="cursor: pointer;">번호</th>
+				<th class="text-center" style="cursor: pointer;">제품명</th>
+				<th class="text-center" style="cursor: pointer;">수량</th>
+				<th class="text-center" style="cursor: pointer;">금액</th>
+				<th class="text-center" style="cursor: pointer;">구매시간</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="bean" items="${clist}" varStatus="status"> 
+ 				<tr>
+					<td class="text-center" style="cursor: pointer;">${status.count}</td>
+					<td class="text-center" style="cursor: pointer;">${bean.name}</td>
+					<td class="text-center" style="cursor: pointer;">${bean.amount}</td>
+					<td class="text-center" style="cursor: pointer;">${bean.totalMoney}</td>
+					<td class="text-center" style="cursor: pointer;">${bean.purchaseTime}</td>
+				</tr>
+			</c:forEach> 
 
-		<div class="form-group">
-		<label for="password" class="cols-sm-2 control-label">비밀번호</label>
-				<div class="cols-sm-10">
-					<div class="input-group">
-						<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-						<input type="password" class="form-control password" name="password"   placeholder="비밀번호를 입력해주세요"  />
-					</div>
-				</div>
-		</div>
-		<div class="form-group ">
-		<input type="submit" class="btn btn-primary btn-lg btn-block login-button" value="로그인"/>
-		</div>
-	</form>
+		</tbody>
+	</table>
 	
-	<div id="footerLogin" style="display:block; width:300px; margin:20px auto;">
-			<a id="findID">아이디 찾기</a>
-			<a id="findPW">비밀번호찾기</a>
-			<a id="join" href="signUp" style="color:black;">회원가입</a>
-	</div>
-	</div>
-	
-	</div>
+
 
 
 <jsp:include page="./layout/footer.jsp"></jsp:include>

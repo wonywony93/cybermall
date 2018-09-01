@@ -4,7 +4,7 @@ drop table shopping_cart;
 
 
 create table user_info(
-	id varchar(20) primary key,
+	id varchar(50) primary key,
 	password varchar(20) not null,
 	name varchar(10) not null,
 	birth date not null,
@@ -22,10 +22,11 @@ create table product_info(
 );
 
 create table shopping_cart(
-	id varchar(20) primary key,
+	id varchar(50) not null,
 	code varchar(10) not null,
 	amount int not null,
-	purchaseTime dateTime not null
+	purchaseTime dateTime not null,
+	totalMoney int not null
 );
 
 create table product_images(
@@ -37,13 +38,6 @@ create table product_images(
 	img5 varchar(30) not null
 );
 
-
-ALTER TABLE shopping_cart
-ADD CONSTRAINT shopping_cart_fk
-FOREIGN KEY(id)
-REFERENCES user_info(id)
-ON UPDATE CASCADE ON DELETE CASCADE
-;
 
 select * from user_info;
 
